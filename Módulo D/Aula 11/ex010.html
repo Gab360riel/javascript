@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DETRAN</title>
+</head>
+<body>
+    A velocidade do carro é de:<input type="number" name="txtve" id="txtve"> km/h.
+    <input type="button" value="Verificar" onclick="calc()" ondblclick="reset()">
+    <div id="r">Resultado:</div>
+</body>
+<script>
+    var txtv = document.getElementById('txtve')
+    var res = document.querySelector('div#r')
+    function calc() {
+        console.log(txtv);
+        
+        var vel = txtv.value
+        res.innerHTML = `<p>Sua velocidade atual é de <b>${vel}</b> km/h</p>`
+        if (vel>60) {
+            res.innerHTML += `<p>Que pena, você foi <b>multado</b> por excesso de velocidade. Você trafega à <b>${vel} km/h</b> em uma rodovia com <b>limite de 60 km/h.</b></p>`
+        } else {
+            res.innerHTML += `<p>Parabéns, você <b>não foi multado</b>. Você está trafegando à uma velocidade de <b>${vel} km/h</b> em uma rodovia de <b>60km/h.</b> Continue digirindo seguramente!</b>!</p>`
+        }
+    }
+    function reset() {
+        res.innerHTML = `Resultado:`
+    }
+</script>
+</html>

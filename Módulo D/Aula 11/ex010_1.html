@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 11</title>
+</head>
+<body>
+    Qual a sua nacionalidade? :<input type="text" id="nationalityId" name="nationalityId">.
+    <input type="button" value="Verificar" onclick="ver()">
+    <div id="resp">Resultado</div>
+</body>
+<script>
+    var nationality = document.getElementById('nationalityId')
+    var answer = document.querySelector('div#resp')
+    function ver() {
+        var country = nationality.value
+        console.log(nationality)
+        answer.innerHTML = `<p>A sua nacionalidade é: </p>`
+        if (country !== "Brasileiro") {
+            answer.innerHTML += `${country}, não é brasileiro.`
+        } else {
+            answer.innerHTML += `${country}`
+        }
+    }
+</script>
+</html>
